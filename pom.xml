@@ -26,6 +26,20 @@
     <extension.wagon-svn.version>1.9</extension.wagon-svn.version>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>hippo-maven2</id>
+      <name>Hippo Maven 2</name>
+      <url>http://maven.onehippo.com/maven2/</url>
+    </repository>
+    <repository>
+      <id>hippo-maven2-forge</id>
+      <name>Hippo Maven 2 Forge repository</name>
+      <url>http://maven.onehippo.com/maven2-forge/</url>
+      <snapshots/>
+    </repository>
+  </repositories>
+
 
   <dependencies>
     <dependency>
