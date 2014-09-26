@@ -12,7 +12,7 @@ Add to you cms pom.xml:
 <dependency>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>domain-creation</artifactId>
-    <version>1.01.01</version>
+    <version>1.01.02</version>
 </dependency>
 
 ## Usage:
