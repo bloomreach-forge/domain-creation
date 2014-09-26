@@ -12,7 +12,7 @@
   <description>Domain Creation Tool</description>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>domain-creation</artifactId>
-  <version>1.01.01-SNAPSHOT</version>
+  <version>1.01.01</version>
   <packaging>jar</packaging>
 
   <distributionManagement>
@@ -24,9 +24,9 @@
 
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/domain-creation/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/domain-creation/trunk</developerConnection>
-    <url>http://domain-creation.forge.onehippo.org/</url>
+    <connection>scm:svn:https://forge.onehippo.org/svn/domain-creation/tags/domain-creation-1.01.01</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/domain-creation/tags/domain-creation-1.01.01</developerConnection>
+    <url>http://domain-creation.forge.onehippo.org/tags/domain-creation-1.01.01</url>
   </scm>
 
   <properties>
@@ -44,7 +44,7 @@
       <id>hippo-maven2-forge</id>
       <name>Hippo Maven 2 Forge repository</name>
       <url>http://maven.onehippo.com/maven2-forge/</url>
-      <snapshots/>
+      <snapshots />
     </repository>
   </repositories>
 
@@ -167,9 +167,9 @@
 
   <!-- clear unused elements inherited from hippo-cms7-project pom -->
   <contributors>
-    <contributor/>
+    <contributor />
   </contributors>
-  <ciManagement/>
+  <ciManagement />
 
 
 </project>
