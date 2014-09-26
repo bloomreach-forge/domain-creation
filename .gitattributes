@@ -1,4 +1,5 @@
 * text=auto !eol
+/README.md -text
 /pom.xml -text
 src/main/java/com/javelin/hi/authorization/AuthorizationHandler.java -text
 src/main/java/com/javelin/hi/authorization/AuthorizationWorkflowEvent.java -text
