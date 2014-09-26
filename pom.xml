@@ -12,7 +12,7 @@
   <description>Domain Creation Tool</description>
   <groupId>org.onehippo.forge</groupId>
   <artifactId>domain-creation</artifactId>
-  <version>1.01.01</version>
+  <version>1.01.02-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <distributionManagement>
@@ -24,9 +24,9 @@
 
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/domain-creation/tags/domain-creation-1.01.01</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/domain-creation/tags/domain-creation-1.01.01</developerConnection>
-    <url>http://domain-creation.forge.onehippo.org/tags/domain-creation-1.01.01</url>
+    <connection>scm:svn:https://forge.onehippo.org/svn/domain-creation/trunk</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/domain-creation/trunk</developerConnection>
+    <url>http://domain-creation.forge.onehippo.org/</url>
   </scm>
 
   <properties>
