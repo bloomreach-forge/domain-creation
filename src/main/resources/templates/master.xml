@@ -7,7 +7,7 @@
     <sv:property sv:name="jcr:primaryType" sv:type="Name">
       <sv:value>hipposys:domainfolder</sv:value>
     </sv:property>
-    <sv:node h:merge="combine" sv:name="{{channel}}-readwrite">
+    <sv:node sv:name="{{channel}}-readwrite">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>hipposys:domain</sv:value>
       </sv:property>
@@ -250,7 +250,7 @@
       <!--END AUTHROLE -->
     </sv:node>
     {{#author}}
-    <sv:node h:merge="combine" sv:name="{{channel}}-author">
+    <sv:node  sv:name="{{channel}}-author">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>hipposys:domain</sv:value>
       </sv:property>
@@ -560,7 +560,7 @@
     </sv:node>
     {{/author}}
     {{#editor}}
-    <sv:node h:merge="combine" sv:name="{{channel}}-editor">
+    <sv:node  sv:name="{{channel}}-editor">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>hipposys:domain</sv:value>
       </sv:property>
@@ -670,7 +670,7 @@
     </sv:node>
     {{/editor}}
     {{#admin}}
-    <sv:node h:merge="combine" sv:name="{{channel}}-admin">
+    <sv:node  sv:name="{{channel}}-admin">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>hipposys:domain</sv:value>
       </sv:property>
@@ -785,7 +785,7 @@
       <sv:value>hipposys:groupfolder</sv:value>
     </sv:property>
     {{#author}}
-    <sv:node h:merge="combine" sv:name="{{channel}}-authors">
+    <sv:node sv:name="{{channel}}-authors">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>hipposys:group</sv:value>
       </sv:property>
@@ -795,7 +795,7 @@
     </sv:node>
     {{/author}}
     {{#editor}}
-    <sv:node h:merge="combine" sv:name="{{channel}}-editors">
+    <sv:node  sv:name="{{channel}}-editors">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>hipposys:group</sv:value>
       </sv:property>
@@ -805,7 +805,7 @@
     </sv:node>
     {{/editor}}
     {{#admin}}
-    <sv:node h:merge="combine" sv:name="{{channel}}-admins">
+    <sv:node  sv:name="{{channel}}-admins">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>hipposys:group</sv:value>
       </sv:property>

@@ -52,7 +52,7 @@ public class Authorization implements Auth {
 
     public List<Group> getAdminGroups() {
         if (admin) {
-            //adminGroups = new ArrayList<Group>();
+            adminGroups = new ArrayList<Group>();
             adminGroups.add(new Group(channel + "-admins"));
         }
         return adminGroups;

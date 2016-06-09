@@ -66,10 +66,10 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
         if (HippoEventConstants.CATEGORY_WORKFLOW.equals(event.category()) &&
                 ("publish".equals(event.get("methodName").toString())) && enabled) {
             AuthorizationWorkflowEvent workflowEvent = new AuthorizationWorkflowEvent(session, event);
-            if (workflowEvent.getPrimaryNodeType().equals("authorization:authorization")) {
+            if ("authorization:authorization".equals(workflowEvent.documentType())) {
                 InputStream stream = null;
                 try {
-                    Auth authorization = new AuthorizationAdapter(workflowEvent.getNode());
+                    Auth authorization = new AuthorizationAdapter(workflowEvent.getNode().getNode(workflowEvent.getNode().getName()));
                     final String importToConfigurationXML = template.as(AuthorizationTemplate.class).apply(authorization);
                     stream = new ByteArrayInputStream(importToConfigurationXML.getBytes(StandardCharsets.UTF_8));
                     final HippoSession hippoSession = (HippoSession) session;
