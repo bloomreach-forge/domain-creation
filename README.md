@@ -5,6 +5,10 @@ This plugin is used to automatically create simple domain rules for your project
 
 http://www.onehippo.org/library/concepts/security/repository-authorization-and-permissions.html
 
+## Checkout trunk
+
+## build trunk with mvn clean install
+
 ## Installation:
 
 Add to you cms pom.xml:
@@ -12,7 +16,7 @@ Add to you cms pom.xml:
 <dependency>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>domain-creation</artifactId>
-    <version>1.01.02</version>
+    <version>1.01.02-SNAPSHOT</version>
 </dependency>
 
 ## Usage:
