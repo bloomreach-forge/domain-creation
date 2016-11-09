@@ -1,4 +1,4 @@
-package com.javelin.hi.authorization.model;
+package org.onehippo.forge.domaincreation.authorization.model;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

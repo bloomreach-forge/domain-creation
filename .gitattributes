@@ -1,13 +1,13 @@
 * text=auto !eol
 /README.md -text
 /pom.xml -text
-src/main/java/com/javelin/hi/authorization/AuthorizationHandler.java -text
-src/main/java/com/javelin/hi/authorization/AuthorizationWorkflowEvent.java -text
-src/main/java/com/javelin/hi/authorization/model/Auth.java -text
-src/main/java/com/javelin/hi/authorization/model/Authorization.java -text
-src/main/java/com/javelin/hi/authorization/model/AuthorizationAdapter.java -text
-src/main/java/com/javelin/hi/authorization/model/DomainRule.java -text
-src/main/java/com/javelin/hi/authorization/model/Group.java -text
+src/main/java/org/onehippo/forge/domaincreation/authorization/AuthorizationHandler.java -text
+src/main/java/org/onehippo/forge/domaincreation/authorization/AuthorizationWorkflowEvent.java -text
+src/main/java/org/onehippo/forge/domaincreation/authorization/model/Auth.java -text
+src/main/java/org/onehippo/forge/domaincreation/authorization/model/Authorization.java -text
+src/main/java/org/onehippo/forge/domaincreation/authorization/model/AuthorizationAdapter.java -text
+src/main/java/org/onehippo/forge/domaincreation/authorization/model/DomainRule.java -text
+src/main/java/org/onehippo/forge/domaincreation/authorization/model/Group.java -text
 src/main/resources/configuration/authorizationHandler.xml -text
 src/main/resources/hippoecm-extension.xml -text
 src/main/resources/namespaces/authorization.cnd -text
@@ -22,7 +22,7 @@ src/main/resources/templates/group/admins.xml -text
 src/main/resources/templates/group/authors.xml -text
 src/main/resources/templates/group/editors.xml -text
 src/main/resources/templates/master.xml -text
-src/test/java/com/javelin/hi/authorization/TemplatingTest.java -text
+src/test/java/org/onehippo/forge/domaincreation/authorization/TemplatingTest.java -text
 src/test/resources/templates/domain/admin.xml -text
 src/test/resources/templates/domain/author.xml -text
 src/test/resources/templates/domain/editor.xml -text

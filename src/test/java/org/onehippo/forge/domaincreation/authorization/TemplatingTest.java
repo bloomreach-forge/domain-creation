@@ -1,4 +1,4 @@
-package com.javelin.hi.authorization;
+package org.onehippo.forge.domaincreation.authorization;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.TypeSafeTemplate;
 import com.github.jknack.handlebars.io.ClassPathTemplateLoader;
 import com.github.jknack.handlebars.io.TemplateLoader;
-import com.javelin.hi.authorization.model.Authorization;
-import com.javelin.hi.authorization.model.DomainRule;
+import org.onehippo.forge.domaincreation.authorization.model.Authorization;
+import org.onehippo.forge.domaincreation.authorization.model.DomainRule;
 
 import org.custommonkey.xmlunit.XMLAssert;
 import org.custommonkey.xmlunit.XMLUnit;

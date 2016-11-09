@@ -1,11 +1,6 @@
-package com.javelin.hi.authorization.model;
+package org.onehippo.forge.domaincreation.authorization.model;
 
 import java.util.List;
-
-import javax.jcr.Node;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @version "$Id$"

@@ -1,4 +1,4 @@
-package com.javelin.hi.authorization.model;
+package org.onehippo.forge.domaincreation.authorization.model;
 
 import java.util.ArrayList;
 import java.util.List;

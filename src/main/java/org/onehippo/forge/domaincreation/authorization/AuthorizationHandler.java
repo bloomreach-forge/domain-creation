@@ -1,4 +1,4 @@
-package com.javelin.hi.authorization;
+package org.onehippo.forge.domaincreation.authorization;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -14,8 +14,8 @@ import com.github.jknack.handlebars.Template;
 import com.github.jknack.handlebars.TypeSafeTemplate;
 import com.github.jknack.handlebars.io.ClassPathTemplateLoader;
 import com.github.jknack.handlebars.io.TemplateLoader;
-import com.javelin.hi.authorization.model.Auth;
-import com.javelin.hi.authorization.model.AuthorizationAdapter;
+import org.onehippo.forge.domaincreation.authorization.model.Auth;
+import org.onehippo.forge.domaincreation.authorization.model.AuthorizationAdapter;
 
 import org.apache.commons.io.IOUtils;
 import org.hippoecm.repository.api.HippoSession;

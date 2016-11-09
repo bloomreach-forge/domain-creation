@@ -1,4 +1,4 @@
-package com.javelin.hi.authorization;
+package org.onehippo.forge.domaincreation.authorization;
 
 import javax.jcr.ItemNotFoundException;
 import javax.jcr.Node;
