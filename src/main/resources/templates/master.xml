@@ -511,7 +511,35 @@
         </sv:node>
       </sv:node>
       <!-- END Common Area -->
-
+      {{#authorizedDomains}}
+      <!-- START DOMAIN -->
+      <sv:node sv:name="{{pathId}}-node">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hipposys:domainrule</sv:value>
+        </sv:property>
+        <sv:node sv:name="node-by-uuid">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hipposys:facetrule</sv:value>
+          </sv:property>
+          <sv:property sv:name="hipposys:equals" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hipposys:facet" sv:type="String">
+            <sv:value>hippo:paths</sv:value>
+          </sv:property>
+          <sv:property sv:name="hipposys:filter" sv:type="Boolean">
+            <sv:value>false</sv:value>
+          </sv:property>
+          <sv:property sv:name="hipposys:type" sv:type="String">
+            <sv:value>Reference</sv:value>
+          </sv:property>
+          <sv:property sv:name="hipposys:value" sv:type="String">
+            <sv:value>{{path}}</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <!--END DOMAIN-->
+      {{/authorizedDomains}}
       {{#unauthorizedDomains}}
       <!-- START DOMAIN -->
       <sv:node sv:name="{{pathId}}-node">
