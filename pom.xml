@@ -15,24 +15,31 @@
   <version>1.01.02-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <distributionManagement>
-    <repository>
-      <id>domain-creation-maven-repo</id>
-      <url>svn:https://forge.onehippo.org/svn/domain-creation/maven2/</url>
-    </repository>
-  </distributionManagement>
-
-
-  <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/domain-creation/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/domain-creation/trunk</developerConnection>
-    <url>http://domain-creation.forge.onehippo.org/</url>
-  </scm>
-
   <properties>
     <plugin.site.version>3.3</plugin.site.version>
     <extension.wagon-svn.version>1.9</extension.wagon-svn.version>
   </properties>
+
+  <scm>
+    <connection>scm:git:git@github.com:onehippo-forge/domain-creation.git</connection>
+    <developerConnection>scm:git:git@github.com:onehippo-forge/domain-creation.git</developerConnection>
+    <url>https://github.com/onehippo-forge/domain-creation.git</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <name>Hippo Maven 2 Forge Repository</name>
+      <id>hippo-maven2-forge</id>
+      <url>https://maven.onehippo.com/content/repositories/forge-releases/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+  </distributionManagement>
+
+  <issueManagement>
+    <system>Hippo JIRA</system>
+    <url>https://issues.onehippo.com/browse/HIPFORGE</url>
+  </issueManagement>
 
   <repositories>
     <repository>
@@ -88,6 +95,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>${plugin.site.version}</version>
+        <configuration>
+          <outputDirectory>docs</outputDirectory>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
