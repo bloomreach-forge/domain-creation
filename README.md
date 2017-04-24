@@ -10,11 +10,13 @@ For reference, see the page [repository authorization and permissions](http://ww
 
 Add to your CMS pom.xml:
 
+```
 <dependency>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>domain-creation</artifactId>
     <version>1.01.01</version>
 </dependency>
+```
 
 ## Usage
 
