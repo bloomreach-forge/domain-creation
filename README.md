@@ -7,6 +7,20 @@ This plugin is used to automatically create simple domain rules for your project
 For reference, see the page [repository authorization and permissions](http://www.onehippo.org/library/concepts/security/repository-authorization-and-permissions.html)
 
 ## Installation
+Add this repository definition to the main project pom.xml:
+
+<repository>
+  <id>hippo-forge</id>
+  <name>Hippo Forge maven 2 repository.</name>
+  <url>https://maven.onehippo.com/maven2-forge/</url>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+  <releases>
+    <updatePolicy>never</updatePolicy>
+  </releases>
+  <layout>default</layout>
+</repository>
 
 Add to your CMS pom.xml:
 
