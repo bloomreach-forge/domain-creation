@@ -9,6 +9,7 @@ For reference, see the page [repository authorization and permissions](http://ww
 ## Installation
 Add this repository definition to the main project pom.xml:
 
+```
 <repository>
   <id>hippo-forge</id>
   <name>Hippo Forge maven 2 repository.</name>
@@ -21,6 +22,7 @@ Add this repository definition to the main project pom.xml:
   </releases>
   <layout>default</layout>
 </repository>
+```
 
 Add to your CMS pom.xml:
 
