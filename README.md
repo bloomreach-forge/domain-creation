@@ -25,12 +25,33 @@ Add this repository definition to the main project pom.xml:
 ```
 
 Add to your CMS pom.xml:
-
+(for v12, there's a slight catch. Exclusion is needed because com.github.jknack:handlebars:1.3.1 introduces the same jar
+with different version)
+```xml
 <dependency>
     <groupId>org.onehippo.forge</groupId>
     <artifactId>domain-creation</artifactId>
     <version>1.01.01</version>
+    <exclusions>
+    <!--because of com.github.jknack:handlebars:1.3.1 -->
+      <exclusion>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+    </exclusion>
+  </exclusions>
 </dependency>
+```
+Also remember to add the plugin as a dependency in your v12 project at: /repository-data/application/src/main/resources/hcm-module.yaml
+
+See the "after":
+```yaml
+group: 
+  name: myhippoproject
+  after: [hippo-cms, domain-creation]
+project: myhippoproject
+module:
+  name: myhippoproject-repository-data-application
+```
 
 ## Usage
 

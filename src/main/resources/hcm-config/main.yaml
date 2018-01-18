@@ -1,0 +1,5 @@
+definitions:
+  namespace:
+    authorization:
+      uri: http://www.onehippo.org/jcr/authorization/nt/1.0
+      cnd: namespaces/authorization.cnd
