@@ -4,5 +4,5 @@ definitions:
       jcr:primaryType: hipposys:module
       hipposys:className: org.onehippo.forge.domaincreation.authorization.AuthorizationHandler
       /hippo:moduleconfig:
-        jcr:primaryType: nt:unstructured
+        jcr:primaryType: hipposys:moduleconfig
         auth.enabled: true

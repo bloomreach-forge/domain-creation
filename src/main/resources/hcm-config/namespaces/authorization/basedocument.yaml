@@ -3,11 +3,9 @@ definitions:
     /hippo:namespaces/authorization/basedocument:
       jcr:primaryType: hipposysedit:templatetype
       jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: 316e53fe-08ea-420d-be0c-dc29747b3359
       /hipposysedit:nodetype:
         jcr:primaryType: hippo:handle
         jcr:mixinTypes: ['hippo:hardhandle']
-        jcr:uuid: 155bcd16-2296-499e-959e-7e8cc9a52c5c
         /hipposysedit:nodetype:
           jcr:primaryType: hipposysedit:nodetype
           jcr:mixinTypes: ['hipposysedit:remodel']

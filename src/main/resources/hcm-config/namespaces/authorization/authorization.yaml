@@ -3,15 +3,12 @@ definitions:
     /hippo:namespaces/authorization/authorization:
       jcr:primaryType: hipposysedit:templatetype
       jcr:mixinTypes: ['mix:referenceable', 'editor:editable']
-      jcr:uuid: 6a9f7852-2fc7-4a64-9ecd-e01530716989
       /hipposysedit:nodetype:
         jcr:primaryType: hippo:handle
         jcr:mixinTypes: ['hippo:hardhandle']
-        jcr:uuid: 46095391-0414-40cc-8cf3-a9c8b92d0c1c
         /hipposysedit:nodetype:
           jcr:primaryType: hipposysedit:nodetype
           jcr:mixinTypes: ['hipposysedit:remodel', 'hippo:harddocument']
-          jcr:uuid: 5164d3bf-bacc-4809-ada2-940fd7ced869
           hipposysedit:node: true
           hipposysedit:supertype: ['authorization:basedocument', 'hippostd:relaxed']
           hipposysedit:uri: http://www.onehippo.org/jcr/authorization/nt/1.0
@@ -52,7 +49,6 @@ definitions:
         /hipposysedit:prototype:
           jcr:primaryType: authorization:authorization
           jcr:mixinTypes: ['hippo:harddocument']
-          jcr:uuid: 2d94174d-380b-459c-b2f9-db1c1768bda5
           authorization:admin: false
           authorization:author: false
           authorization:editor: false
