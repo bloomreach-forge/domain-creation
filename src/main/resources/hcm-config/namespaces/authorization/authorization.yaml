@@ -1,0 +1,108 @@
+definitions:
+  config:
+    /hippo:namespaces/authorization/authorization:
+      jcr:primaryType: hipposysedit:templatetype
+      jcr:mixinTypes: ['mix:referenceable', 'editor:editable']
+      /hipposysedit:nodetype:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:hardhandle']
+        /hipposysedit:nodetype:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['hipposysedit:remodel', 'hippo:harddocument']
+          hipposysedit:node: true
+          hipposysedit:supertype: ['authorization:basedocument', 'hippostd:relaxed']
+          hipposysedit:uri: http://www.onehippo.org/jcr/authorization/nt/1.0
+          /author:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: authorization:author
+            hipposysedit:primary: false
+            hipposysedit:type: Boolean
+          /editor:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: authorization:editor
+            hipposysedit:primary: false
+            hipposysedit:type: Boolean
+          /admin:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: authorization:admin
+            hipposysedit:primary: false
+            hipposysedit:type: Boolean
+          /docfolders:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: true
+            hipposysedit:ordered: true
+            hipposysedit:path: authorization:docfolders
+            hipposysedit:primary: false
+            hipposysedit:type: hippo:mirror
+      /hipposysedit:prototypes:
+        jcr:primaryType: hipposysedit:prototypeset
+        /hipposysedit:prototype:
+          jcr:primaryType: authorization:authorization
+          jcr:mixinTypes: ['hippo:harddocument']
+          authorization:admin: false
+          authorization:author: false
+          authorization:editor: false
+          hippostd:holder: holder
+          hippostd:state: draft
+          hippostdpubwf:createdBy: ''
+          hippostdpubwf:creationDate: 2014-08-20T15:07:05.157+02:00
+          hippostdpubwf:lastModificationDate: 2014-08-20T15:07:05.156+02:00
+          hippostdpubwf:lastModifiedBy: ''
+          /authorization:docfolders:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
+      /editor:templates:
+        jcr:primaryType: editor:templateset
+        /_default_:
+          jcr:primaryType: frontend:plugincluster
+          frontend:properties: [mode]
+          frontend:references: [wicket.model, model.compareTo, engine, validator.id]
+          frontend:services: [wicket.id, validator.id]
+          type: authorization:authorization
+          /root:
+            jcr:primaryType: frontend:plugin
+            item: ${cluster.id}.field
+            plugin.class: org.hippoecm.frontend.service.render.ListViewPlugin
+          /author:
+            jcr:primaryType: frontend:plugin
+            caption: Author
+            field: author
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /editor:
+            jcr:primaryType: frontend:plugin
+            caption: Editor
+            field: editor
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /admin:
+            jcr:primaryType: frontend:plugin
+            caption: Admin
+            field: admin
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /docfolders:
+            jcr:primaryType: frontend:plugin
+            caption: Document Folders
+            field: docfolders
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.NodeFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+              nodetypes: ['hippostd:folder']
