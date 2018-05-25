@@ -1,6 +1,5 @@
 group: 
-  name: domain-creation
+  name: hippo-forge
   after: hippo-cms
 project: domain-creation
-module:
-  name: domain-creation
+module: domain-creation
