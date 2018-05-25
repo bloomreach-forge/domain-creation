@@ -51,17 +51,30 @@
       <id>hippo-maven2-forge</id>
       <name>Hippo Maven 2 Forge repository</name>
       <url>http://maven.onehippo.com/maven2-forge/</url>
-      <snapshots />
+      <snapshots/>
     </repository>
   </repositories>
-
 
   <dependencies>
     <dependency>
       <groupId>com.github.jknack</groupId>
       <artifactId>handlebars</artifactId>
       <version>1.3.1</version>
+      <exclusions>
+        <!-- exclude the commons-lang3 here and set as provided later to avoid collisions -->
+        <exclusion>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <scope>provided</scope>
+      <version>3.5</version>
+    </dependency>
+
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
@@ -79,10 +92,26 @@
       <version>4.10</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-repository-connector</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
     <defaultGoal>package</defaultGoal>
+    <resources>
+      <resource>
+        <filtering>false</filtering>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.cnd</include>
+          <include>**/*.yaml</include>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
     <extensions>
       <extension>
         <groupId>org.jvnet.wagon-svn</groupId>
@@ -177,9 +206,9 @@
 
   <!-- clear unused elements inherited from hippo-cms7-project pom -->
   <contributors>
-    <contributor />
+    <contributor/>
   </contributors>
-  <ciManagement />
+  <ciManagement/>
 
 
 </project>

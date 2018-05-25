@@ -1,0 +1,8 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:modules/authorizationHandler:
+      jcr:primaryType: hipposys:module
+      hipposys:className: org.onehippo.forge.domaincreation.authorization.AuthorizationHandler
+      /hippo:moduleconfig:
+        jcr:primaryType: hipposys:moduleconfig
+        auth.enabled: true
