@@ -3,15 +3,10 @@ package org.onehippo.forge.domaincreation.authorization.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @version "$Id$"
  */
 public class Authorization implements Auth {
-
-    private static Logger log = LoggerFactory.getLogger(Authorization.class);
 
     public String channel;
     public List<DomainRule> authorizedDomains;
@@ -27,7 +22,7 @@ public class Authorization implements Auth {
 
     public List<Group> getAuthorGroups() {
         if (author) {
-            authorGroups = new ArrayList<Group>();
+            authorGroups = new ArrayList<>();
             authorGroups.add(new Group(channel + "-authors"));
             if (editor) {
                 authorGroups.add(new Group(channel + "-editors"));
@@ -41,7 +36,7 @@ public class Authorization implements Auth {
 
     public List<Group> getEditorGroups() {
         if (editor) {
-            editorGroups = new ArrayList<Group>();
+            editorGroups = new ArrayList<>();
             editorGroups.add(new Group(channel + "-editors"));
             if (admin) {
                 editorGroups.add(new Group(channel + "-admins"));
@@ -52,7 +47,7 @@ public class Authorization implements Auth {
 
     public List<Group> getAdminGroups() {
         if (admin) {
-            adminGroups = new ArrayList<Group>();
+            adminGroups = new ArrayList<>();
             adminGroups.add(new Group(channel + "-admins"));
         }
         return adminGroups;
@@ -71,7 +66,7 @@ public class Authorization implements Auth {
     }
 
     public List<Group> getGroups() {
-        groups = new ArrayList<Group>();
+        groups = new ArrayList<>();
         if (author) {
             groups.add(new Group(channel + "-authors"));
         }
@@ -91,21 +86,21 @@ public class Authorization implements Auth {
 
     public boolean add(final Group group) {
         if (groups == null) {
-            groups = new ArrayList<Group>();
+            groups = new ArrayList<>();
         }
         return groups.add(group);
     }
 
     public boolean addAuthorized(final DomainRule domain) {
         if (authorizedDomains == null) {
-            authorizedDomains = new ArrayList<DomainRule>();
+            authorizedDomains = new ArrayList<>();
         }
         return !authorizedDomains.contains(domain) && authorizedDomains.add(domain);
     }
 
     public boolean addUnauthorized(final DomainRule domain) {
         if (unauthorizedDomains == null) {
-            unauthorizedDomains = new ArrayList<DomainRule>();
+            unauthorizedDomains = new ArrayList<>();
         }
         return !unauthorizedDomains.contains(domain) && unauthorizedDomains.add(domain);
     }

@@ -1,14 +1,10 @@
 package org.onehippo.forge.domaincreation.authorization.model;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @version "$Id$"
  */
 public class DomainRule {
 
-    private static Logger log = LoggerFactory.getLogger(DomainRule.class);
     public String pathId;
     public String path;
 

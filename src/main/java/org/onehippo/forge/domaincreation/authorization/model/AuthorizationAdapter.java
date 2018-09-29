@@ -21,7 +21,6 @@ public class AuthorizationAdapter implements Auth {
     private boolean author;
     private boolean editor;
     private boolean admin;
-    private String channel;
     private Authorization authorization;
 
     public AuthorizationAdapter(final Node node) throws RepositoryException {
@@ -38,7 +37,7 @@ public class AuthorizationAdapter implements Auth {
         if (node.hasProperty("authorization:admin")) {
             this.admin = node.getProperty("authorization:admin").getBoolean();
         }
-        this.channel = node.getName();
+        final String channel = node.getName();
         this.authorization = new Authorization();
         this.authorization.setAdmin(admin);
         this.authorization.setEditor(editor);
