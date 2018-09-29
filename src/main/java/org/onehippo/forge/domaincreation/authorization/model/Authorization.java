@@ -100,13 +100,14 @@ public class Authorization implements Auth {
         if (authorizedDomains == null) {
             authorizedDomains = new ArrayList<DomainRule>();
         }
-        return authorizedDomains.add(domain);
+        return !authorizedDomains.contains(domain) && authorizedDomains.add(domain);
     }
+
     public boolean addUnauthorized(final DomainRule domain) {
         if (unauthorizedDomains == null) {
             unauthorizedDomains = new ArrayList<DomainRule>();
         }
-        return unauthorizedDomains.add(domain);
+        return !unauthorizedDomains.contains(domain) && unauthorizedDomains.add(domain);
     }
 
     public boolean isAuthor() {

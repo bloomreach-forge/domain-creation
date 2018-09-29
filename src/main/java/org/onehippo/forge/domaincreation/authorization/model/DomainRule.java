@@ -33,4 +33,20 @@ public class DomainRule {
         this.path = path;
     }
 
+    /**
+     * Define equals method so duplicates can be eliminated
+     * @param obj
+     * @return
+     */
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof DomainRule)) {
+            return false;
+        }
+        DomainRule domainObj = (DomainRule) obj;
+
+        return (domainObj.getPathId().equals(pathId) &&
+                domainObj.getPath().equals(path));
+    }
 }
