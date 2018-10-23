@@ -52,6 +52,12 @@ module:
 6. Login with user and behold result of autocreated domain.
 
 ## Release notes
+### 23 October 2018 Release 2.0.1
+- In domains, replace hippo:paths with jcr:path
+- Add path-specific domain rules for hippo:request nodes
+- Fix issue with not being able to select 2+ folders in authorization document
+- Use deamon module's session instead of local admin/admin
+
 ### 25 May 2018 Release 2.0.0
 - Upgrade to Hippo CMS 12
 
