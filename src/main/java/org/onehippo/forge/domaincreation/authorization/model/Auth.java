@@ -2,9 +2,7 @@ package org.onehippo.forge.domaincreation.authorization.model;
 
 import java.util.List;
 
-/**
- * @version "$Id$"
- */
+
 public interface Auth {
 
     List<Group> getAuthorGroups();

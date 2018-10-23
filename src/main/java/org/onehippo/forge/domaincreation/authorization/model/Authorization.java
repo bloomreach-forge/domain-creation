@@ -3,9 +3,7 @@ package org.onehippo.forge.domaincreation.authorization.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @version "$Id$"
- */
+
 public class Authorization implements Auth {
 
     public String channel;

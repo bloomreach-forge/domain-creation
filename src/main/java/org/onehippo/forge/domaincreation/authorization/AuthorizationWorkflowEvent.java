@@ -8,9 +8,7 @@ import javax.jcr.Session;
 import org.onehippo.cms7.event.HippoEvent;
 import org.onehippo.repository.events.HippoWorkflowEvent;
 
-/**
- * @version "$Id$"
- */
+
 public class AuthorizationWorkflowEvent<T extends AuthorizationWorkflowEvent<T>> extends HippoWorkflowEvent<T> {
 
     private Session session;

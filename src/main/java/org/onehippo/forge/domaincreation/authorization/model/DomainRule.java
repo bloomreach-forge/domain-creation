@@ -1,8 +1,6 @@
 package org.onehippo.forge.domaincreation.authorization.model;
 
-/**
- * @version "$Id$"
- */
+
 public class DomainRule {
 
     public String pathId;
@@ -31,8 +29,6 @@ public class DomainRule {
 
     /**
      * Define equals method so duplicates can be eliminated
-     * @param obj
-     * @return
      */
 
     @Override

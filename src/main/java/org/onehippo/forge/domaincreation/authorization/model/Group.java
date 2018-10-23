@@ -1,8 +1,6 @@
 package org.onehippo.forge.domaincreation.authorization.model;
 
-/**
- * @version "$Id$"
- */
+
 public class Group {
 
     public Group(final String group) {

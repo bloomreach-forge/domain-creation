@@ -10,9 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @version "$Id$"
- */
 public class AuthorizationAdapter implements Auth {
 
     private static Logger log = LoggerFactory.getLogger(AuthorizationAdapter.class);
@@ -46,8 +43,7 @@ public class AuthorizationAdapter implements Auth {
         getChildBeansByName("authorization:docfolders");
 
     }
-
-    @SuppressWarnings("unchecked")
+    
     public void getChildBeansByName(String childNodeName) {
         NodeIterator nodes;
         try {

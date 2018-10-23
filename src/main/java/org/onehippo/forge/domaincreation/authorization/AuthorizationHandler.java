@@ -36,11 +36,10 @@ import com.github.jknack.handlebars.TypeSafeTemplate;
 import com.github.jknack.handlebars.io.ClassPathTemplateLoader;
 import com.github.jknack.handlebars.io.TemplateLoader;
 
-/**
- * @version "$Id$"
- */
+
 public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
 
+    private static final Value[] EMPTY_VALUE_ARRAY = new Value[0];
     private static Logger log = LoggerFactory.getLogger(AuthorizationHandler.class);
     private static String GROUPS_PATH = "hippo:configuration/hippo:groups";
     private static String DOMAINS_PATH = "hippo:configuration/hippo:domains";
@@ -111,7 +110,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[0]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(EMPTY_VALUE_ARRAY));
                     }
                 }
             }
@@ -123,7 +122,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[0]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(EMPTY_VALUE_ARRAY));
                     }
                 }
             }
@@ -135,7 +134,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[0]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(EMPTY_VALUE_ARRAY));
                     }
                 }
             }
