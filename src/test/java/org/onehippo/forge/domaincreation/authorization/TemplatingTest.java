@@ -7,6 +7,7 @@ import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.TypeSafeTemplate;
 import com.github.jknack.handlebars.io.ClassPathTemplateLoader;
 import com.github.jknack.handlebars.io.TemplateLoader;
+
 import org.onehippo.forge.domaincreation.authorization.model.Authorization;
 import org.onehippo.forge.domaincreation.authorization.model.DomainRule;
 
@@ -117,14 +118,15 @@ public class TemplatingTest {
     }
 
 
-    public static interface AuthorizationTemplate extends TypeSafeTemplate<Authorization> {
+    public interface AuthorizationTemplate extends TypeSafeTemplate<Authorization> {
     }
 
 
-    public static interface TestTemplate extends TypeSafeTemplate<TestTemplating> {
+    public interface TestTemplate extends TypeSafeTemplate<TestTemplating> {
 
-        public TestTemplate setTitle(String title);
-        public TestTemplate setCompounds(List<TestCompound> compounds);
+        TestTemplate setTitle(String title);
+
+        TestTemplate setCompounds(List<TestCompound> compounds);
 
     }
 
@@ -155,7 +157,7 @@ public class TemplatingTest {
 
         public boolean add(final TestCompound testCompoundObject) {
             if (items == null) {
-                items = new ArrayList<TestCompound>();
+                items = new ArrayList<>();
             }
             return items.add(testCompoundObject);
         }

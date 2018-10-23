@@ -10,9 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @version "$Id$"
- */
 public class AuthorizationAdapter implements Auth {
 
     private static Logger log = LoggerFactory.getLogger(AuthorizationAdapter.class);
@@ -21,7 +18,6 @@ public class AuthorizationAdapter implements Auth {
     private boolean author;
     private boolean editor;
     private boolean admin;
-    private String channel;
     private Authorization authorization;
 
     public AuthorizationAdapter(final Node node) throws RepositoryException {
@@ -38,7 +34,7 @@ public class AuthorizationAdapter implements Auth {
         if (node.hasProperty("authorization:admin")) {
             this.admin = node.getProperty("authorization:admin").getBoolean();
         }
-        this.channel = node.getName();
+        final String channel = node.getName();
         this.authorization = new Authorization();
         this.authorization.setAdmin(admin);
         this.authorization.setEditor(editor);
@@ -47,8 +43,7 @@ public class AuthorizationAdapter implements Auth {
         getChildBeansByName("authorization:docfolders");
 
     }
-
-    @SuppressWarnings("unchecked")
+    
     public void getChildBeansByName(String childNodeName) {
         NodeIterator nodes;
         try {

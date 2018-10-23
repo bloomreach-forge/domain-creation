@@ -15,39 +15,36 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.jackrabbit.value.StringValue;
+import org.hippoecm.repository.api.HippoSession;
+import org.hippoecm.repository.api.ImportReferenceBehavior;
+import org.onehippo.cms7.event.HippoEvent;
+import org.onehippo.cms7.event.HippoEventConstants;
+import org.onehippo.cms7.services.HippoServiceRegistry;
+import org.onehippo.cms7.services.eventbus.HippoEventBus;
+import org.onehippo.cms7.services.eventbus.Subscribe;
+import org.onehippo.forge.domaincreation.authorization.model.Auth;
+import org.onehippo.forge.domaincreation.authorization.model.AuthorizationAdapter;
+import org.onehippo.repository.modules.AbstractReconfigurableDaemonModule;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
 import com.github.jknack.handlebars.TypeSafeTemplate;
 import com.github.jknack.handlebars.io.ClassPathTemplateLoader;
 import com.github.jknack.handlebars.io.TemplateLoader;
 
-import org.apache.jackrabbit.value.StringValue;
-import org.hippoecm.repository.HippoRepository;
-import org.hippoecm.repository.HippoRepositoryFactory;
-import org.hippoecm.repository.api.ImportReferenceBehavior;
-import org.onehippo.forge.domaincreation.authorization.model.Auth;
-import org.onehippo.forge.domaincreation.authorization.model.AuthorizationAdapter;
 
-import org.apache.commons.io.IOUtils;
-import org.hippoecm.repository.api.HippoSession;
-import org.onehippo.cms7.event.HippoEvent;
-import org.onehippo.cms7.event.HippoEventConstants;
-import org.onehippo.cms7.services.HippoServiceRegistry;
-import org.onehippo.cms7.services.eventbus.HippoEventBus;
-import org.onehippo.cms7.services.eventbus.Subscribe;
-import org.onehippo.repository.modules.AbstractReconfigurableDaemonModule;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-/**
- * @version "$Id$"
- */
 public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
 
+    private static final Value[] EMPTY_VALUE_ARRAY = new Value[0];
     private static Logger log = LoggerFactory.getLogger(AuthorizationHandler.class);
     private static String GROUPS_PATH = "hippo:configuration/hippo:groups";
     private static String DOMAINS_PATH = "hippo:configuration/hippo:domains";
     private static String MEMBERS_PROPERTY = "hipposys:members";
+    private HippoSession hippoSession;
 
     private boolean enabled = true;
     private Template template;
@@ -61,6 +58,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
 
     @Override
     protected void doInitialize(final Session session) {
+        this.hippoSession = (HippoSession) session;
         HippoServiceRegistry.registerService(this, HippoEventBus.class);
         TemplateLoader masterLoader = new ClassPathTemplateLoader();
         masterLoader.setPrefix("/templates");
@@ -74,13 +72,9 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
     }
 
     @Subscribe
-    public void doAuthorizationUpdate(HippoEvent event) throws RepositoryException {
-        //have to get session every time
-        HippoSession hippoSession;
+    public void doAuthorizationUpdate(HippoEvent event) {
         if (HippoEventConstants.CATEGORY_WORKFLOW.equals(event.category()) &&
                 ("publish".equals(event.get("methodName").toString())) && enabled) {
-            HippoRepository repository = HippoRepositoryFactory.getHippoRepository("vm://");
-            hippoSession = (HippoSession) repository.login("admin", "admin".toCharArray()); //Perhaps use a different user.Maybe bootstrap one with the plugin?
             AuthorizationWorkflowEvent workflowEvent = new AuthorizationWorkflowEvent(hippoSession, event);
             if ("authorization:authorization".equals(workflowEvent.documentType())) {
                 InputStream stream = null;
@@ -97,20 +91,11 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                     //add the previous members to groups
                     addPreviousMembers(hippoSession, authorization, groupMembers);
                     hippoSession.save();
-                    hippoSession.logout();
-                } catch (RepositoryException e) {
-                    log.error("repository exception while trying to apply authorization to master template", e);
-                } catch (IOException e) {
-                    log.error("IO exception while trying to apply authorization to master template", e);
+                } catch (RepositoryException | IOException e) {
+                    log.error(e.getMessage());
                 } finally {
                     IOUtils.closeQuietly(stream);
-                    if (hippoSession != null && hippoSession.isLive()) {
-                        hippoSession.logout();
-                    }
                 }
-            }
-            if (hippoSession != null && hippoSession.isLive()) {
-                hippoSession.logout();
             }
         }
     }
@@ -125,7 +110,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[values.size()]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(EMPTY_VALUE_ARRAY));
                     }
                 }
             }
@@ -137,7 +122,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[values.size()]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(EMPTY_VALUE_ARRAY));
                     }
                 }
             }
@@ -149,7 +134,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[values.size()]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(EMPTY_VALUE_ARRAY));
                     }
                 }
             }
