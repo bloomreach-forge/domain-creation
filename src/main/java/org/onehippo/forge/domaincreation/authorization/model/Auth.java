@@ -7,24 +7,24 @@ import java.util.List;
  */
 public interface Auth {
 
-    public List<Group> getAuthorGroups();
+    List<Group> getAuthorGroups();
 
-    public List<Group> getEditorGroups();
+    List<Group> getEditorGroups();
 
-    public List<Group> getAdminGroups();
+    List<Group> getAdminGroups();
 
-    public String getChannel();
+    String getChannel();
 
-    public List<Group> getGroups();
+    List<Group> getGroups();
 
-    public boolean isAuthor();
+    boolean isAuthor();
 
-    public boolean isEditor();
+    boolean isEditor();
 
-    public boolean isAdmin();
+    boolean isAdmin();
 
-    public List<DomainRule> getUnauthorizedDomains();
+    List<DomainRule> getUnauthorizedDomains();
 
-    public List<DomainRule> getAuthorizedDomains();
+    List<DomainRule> getAuthorizedDomains();
 
 }

@@ -111,7 +111,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[values.size()]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[0]));
                     }
                 }
             }
@@ -123,7 +123,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[values.size()]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[0]));
                     }
                 }
             }
@@ -135,7 +135,7 @@ public class AuthorizationHandler extends AbstractReconfigurableDaemonModule {
                         values.add(new StringValue(member));
                     }
                     if (values.size() > 0) {
-                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[values.size()]));
+                        hippoSession.getRootNode().getNode(nodePath).setProperty(MEMBERS_PROPERTY, values.toArray(new Value[0]));
                     }
                 }
             }
