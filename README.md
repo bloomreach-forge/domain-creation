@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/onehippo-forge/domain-creation.svg?branch=develop)](https://travis-ci.org/onehippo-forge/domain-creation)
+[![Build Status](https://travis-ci.org/bloomreach-forge/domain-creation.svg?branch=develop)](https://travis-ci.org/bloomreach-forge/domain-creation)
 
 # Hippo Domain Creation Plugin
 
@@ -12,7 +12,7 @@ Make sure to have this repository definition to the main project pom.xml:
 ``` xml
 <repository>
   <id>hippo-forge</id>
-  <name>Hippo Forge maven 2 repository.</name>
+  <name>Bloomreach Forge maven 2 repository.</name>
   <url>https://maven.onehippo.com/maven2-forge/</url>
   <snapshots>
     <enabled>false</enabled>
@@ -66,4 +66,4 @@ module:
  
 ## Documentation 
 
-No documentation site available at [onehippo-forge.github.io/](https://onehippo-forge.github.io/) for this plugin.
+No documentation site available at [bloomreach-forge.github.io/](https://bloomreach-forge.github.io/) for this plugin.

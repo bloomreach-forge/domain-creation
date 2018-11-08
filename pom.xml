@@ -21,9 +21,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git@github.com:onehippo-forge/domain-creation.git</connection>
-    <developerConnection>scm:git:git@github.com:onehippo-forge/domain-creation.git</developerConnection>
-    <url>https://github.com/onehippo-forge/domain-creation.git</url>
+    <connection>scm:git:git@github.com:bloomreach-forge/domain-creation.git</connection>
+    <developerConnection>scm:git:git@github.com:bloomreach-forge/domain-creation.git</developerConnection>
+    <url>https://github.com/bloomreach-forge/domain-creation.git</url>
     <tag>HEAD</tag>
   </scm>
 
